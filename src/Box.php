@@ -366,6 +366,13 @@ class Box
 //        return $lines;
 //    }
 
+    public function getHeight($text) {
+        $lines = $this->wrapTextWithOverflow($text);
+        $lineHeightPx = $this->lineHeight * $this->fontSize;
+        $textHeight = count($lines) * $lineHeightPx;
+        return $textHeight;
+    }
+    
     /**
      * 拆分字符串为数组
      * @param $str
